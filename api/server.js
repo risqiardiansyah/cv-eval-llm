@@ -119,6 +119,14 @@ app.post("/upload", authenticateToken, (req, res) => {
     ["cv", "project"].forEach((key) => {
       if (files[key]) {
         const file = Array.isArray(files[key]) ? files[key][0] : files[key];
+
+        if (file.mimetype !== "application/pdf") {
+          if (fs.existsSync(file.filepath)) fs.unlinkSync(file.filepath);
+          return res
+            .status(400)
+            .json({ error: `${key.toUpperCase()} file must be a PDF` });
+        }
+
         const id = uuidv4();
         const ext = path.extname(file.originalFilename || file.name) || ".pdf";
         const dest = path.join(UPLOAD_DIR, `${id}${ext}`);
