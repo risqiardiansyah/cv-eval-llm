@@ -96,8 +96,37 @@ const worker = new Worker(
       const cvPrompt = [
         {
           role: "system",
-          content:
-            "You are an expert hiring manager. Return ONLY valid JSON start with { and ended with } with numeric scores 1-5 for technical_skills, experience_level, achievements, cultural_fit; compute cv_match_rate (0-1) using weights technical:0.35, experience:0.25, achievements:0.2, cultural:0.2, and include cv_feedback (80-200 chars).",
+          content: `"You are an expert hiring manager evaluating a candidate's CV for a software engineering position. 
+              Use the rubric provided below to assign numeric scores (1-5) for each parameter. 
+              Return ONLY valid JSON (no text before or after it). 
+              Follow the weighting and output schema precisely.
+
+              Rubric:
+              - technical_skills (weight 0.40): Alignment with job requirements (backend, databases, APIs, cloud, AI/LLM).
+                1 = Irrelevant skills, 2 = Few overlaps, 3 = Partial match, 4 = Strong match, 5 = Excellent match + AI/LLM exposure.
+              - experience_level (weight 0.25): Years of experience and project complexity.
+                1 = <1 yr / trivial projects, 2 = 1-2 yrs small projects, 3 = 2-3 yrs mid-scale, 4 = 3-4 yrs solid track record, 5 = 5+ yrs / high-impact.
+              - achievements (weight 0.20): Impact of past work (scaling, performance, adoption).
+                1 = None, 2 = Minimal, 3 = Some measurable outcomes, 4 = Significant, 5 = Major measurable impact.
+              - cultural_fit (weight 0.15): Communication, learning mindset, teamwork/leadership.
+                1 = Not demonstrated, 2 = Minimal, 3 = Average, 4 = Good, 5 = Excellent.
+
+              Compute:
+              cv_match_rate = ((technical_skills * 0.40) + (experience_level * 0.25) + (achievements * 0.20) + (cultural_fit * 0.15)) / 5.
+
+              Include a feedback summary of 80-200 characters explaining key strengths and gaps.
+
+              Output schema:
+              {
+                "technical_skills": <1-5>,
+                "experience_level": <1-5>,
+                "achievements": <1-5>,
+                "cultural_fit": <1-5>,
+                "cv_match_rate": <0.0-1.0>,
+                "cv_feedback": "<80-200 chars feedback>"
+              }
+
+              Return ONLY JSON starting with { and ending with }."`,
         },
         {
           role: "user",
@@ -138,8 +167,40 @@ const worker = new Worker(
       const projPrompt = [
         {
           role: "system",
-          content:
-            "You are an expert evaluator. Return ONLY JSON start with { and ended with } with correctness, code_quality, resilience, documentation, creativity (1-5), project_score (1-5), project_feedback (80-300 chars).",
+          content: `"You are an expert software evaluator reviewing a candidate’s technical project submission. 
+              Score the project strictly using the rubric below. 
+              Return ONLY valid JSON (no extra text).
+
+              Rubric:
+              - correctness (weight 0.30): Implements prompt design, LLM chaining, RAG context injection.
+                1 = Not implemented, 2 = Minimal attempt, 3 = Works partially, 4 = Works correctly, 5 = Fully correct + thoughtful.
+              - code_quality (weight 0.25): Clean, modular, reusable, tested.
+                1 = Poor, 2 = Some structure, 3 = Decent modularity, 4 = Good structure + tests, 5 = Excellent quality + strong tests.
+              - resilience (weight 0.20): Handles long jobs, retries, randomness, API failures.
+                1 = Missing, 2 = Minimal, 3 = Partial handling, 4 = Solid handling, 5 = Robust and production-ready.
+              - documentation (weight 0.15): README clarity, setup instructions, trade-offs.
+                1 = Missing, 2 = Minimal, 3 = Adequate, 4 = Clear, 5 = Excellent + insightful.
+              - creativity (weight 0.10): Extra features beyond requirements.
+                1 = None, 2 = Basic, 3 = Useful extras, 4 = Strong enhancements, 5 = Outstanding creativity.
+
+              Compute:
+              project_score = weighted average of all parameters (1-5 scale).
+
+              Include a concise feedback summary of 80-300 characters on project strengths and improvement points.
+
+              Output schema:
+              {
+                "correctness": <1-5>,
+                "code_quality": <1-5>,
+                "resilience": <1-5>,
+                "documentation": <1-5>,
+                "creativity": <1-5>,
+                "project_score": <1-5>,
+                "project_feedback": "<80-300 chars feedback>"
+              }
+
+              Return ONLY JSON starting with { and ending with }.
+              "`,
         },
         {
           role: "user",
