@@ -142,6 +142,10 @@ app.post("/upload", authenticateToken, (req, res) => {
             path: dest,
           })
         );
+      } else {
+        return res
+          .status(400)
+          .json({ error: `${key.toUpperCase()} file missing` });
       }
     });
 
