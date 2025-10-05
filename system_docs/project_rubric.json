@@ -1,60 +1,90 @@
 {
-    "metadata": {
-        "author": "System Generator",
-        "last_updated": "2025-10-04",
-        "source": "Internal System Docs",
-        "language": "en",
-        "document_type": "project_rubric"
-    },
-    "unique_id": "project_rubric_001",
-    "valid_roles": [
-        "Backend Developer",
-        "Frontend Developer",
-        "Fullstack Developer",
-        "DevOps Engineer",
-        "Software Engineer"
-    ],
-    "tags": [
-        "project evaluation",
-        "rubric",
-        "software engineering"
-    ],
-    "usage_context": "This document will be used by the LLM to evaluate software development projects for quality and impact.",
-    "content": {
-        "criteria": [
+    "project_deliverable_evaluation": {
+        "parameters": [
             {
-                "criteria": "Clarity of Goals",
-                "weight": 20,
-                "description": "Goals must be clearly defined and measurable."
+                "name": "correctness",
+                "weight": 0.30,
+                "description": "Implements prompt design, LLM chaining, RAG context injection.",
+                "scoring_guide": {
+                    "1": "Not implemented",
+                    "2": "Minimal attempt",
+                    "3": "Works partially",
+                    "4": "Works correctly",
+                    "5": "Fully correct + thoughtful"
+                }
             },
             {
-                "criteria": "Innovation & Creativity",
-                "weight": 20,
-                "description": "Level of innovation in technical approach."
+                "name": "code_quality",
+                "weight": 0.25,
+                "description": "Clean, modular, reusable, tested.",
+                "scoring_guide": {
+                    "1": "Poor",
+                    "2": "Some structure",
+                    "3": "Decent modularity",
+                    "4": "Good structure + tests",
+                    "5": "Excellent quality + strong tests"
+                }
             },
             {
-                "criteria": "Technical Execution",
-                "weight": 30,
-                "description": "Quality of coding, architecture, and implementation."
+                "name": "resilience",
+                "weight": 0.20,
+                "description": "Handles long jobs, retries, randomness, API failures.",
+                "scoring_guide": {
+                    "1": "Missing",
+                    "2": "Minimal",
+                    "3": "Partial handling",
+                    "4": "Solid handling",
+                    "5": "Robust, production-ready"
+                }
             },
             {
-                "criteria": "Project Management",
-                "weight": 15,
-                "description": "Effective time and resource management."
+                "name": "documentation",
+                "weight": 0.15,
+                "description": "README clarity, setup instructions, trade-off explanations.",
+                "scoring_guide": {
+                    "1": "Missing",
+                    "2": "Minimal",
+                    "3": "Adequate",
+                    "4": "Clear",
+                    "5": "Excellent + insightful"
+                }
             },
             {
-                "criteria": "Impact & Outcome",
-                "weight": 15,
-                "description": "The tangible impact and outcome of the project."
+                "name": "creativity",
+                "weight": 0.10,
+                "description": "Extra features beyond requirements.",
+                "scoring_guide": {
+                    "1": "None",
+                    "2": "Very basic",
+                    "3": "Useful extras",
+                    "4": "Strong enhancements",
+                    "5": "Outstanding creativity"
+                }
             }
         ],
-        "total_weight": 100
-    },
-    "version": "1.0",
-    "change_log": [
-        {
-            "date": "2025-10-04",
-            "change": "Initial creation of project rubric document"
+        "overall_formula": "project_score = weighted_average(correctness, code_quality, resilience, documentation, creativity)",
+        "expected_output": {
+            "format": "JSON",
+            "fields": [
+                "correctness",
+                "code_quality",
+                "resilience",
+                "documentation",
+                "creativity",
+                "project_score",
+                "project_feedback"
+            ],
+            "project_feedback_length": "80-300 chars"
         }
-    ]
+    },
+    "overall_candidate_evaluation": {
+        "description": "Combine CV Match Rate (x0.2) and Project Score (1-5). Return 3-5 sentence summary.",
+        "expected_output": {
+            "fields": [
+                "cv_match_rate",
+                "project_score",
+                "overall_summary"
+            ]
+        }
+    }
 }

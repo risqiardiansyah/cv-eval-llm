@@ -1,60 +1,67 @@
 {
-    "metadata": {
-        "author": "System Generator",
-        "last_updated": "2025-10-04",
-        "source": "Internal System Docs",
-        "language": "en",
-        "document_type": "cv_rubric"
-    },
-    "unique_id": "cv_rubric_001",
-    "valid_roles": [
-        "Backend Developer",
-        "Frontend Developer",
-        "Fullstack Developer",
-        "DevOps Engineer",
-        "Software Engineer"
-    ],
-    "tags": [
-        "CV evaluation",
-        "rubric",
-        "software engineering"
-    ],
-    "usage_context": "This document will be used by the LLM to evaluate candidate CVs for software development positions.",
-    "content": {
-        "criteria": [
+    "cv_match_evaluation": {
+        "parameters": [
             {
-                "criteria": "Formatting & Structure",
-                "weight": 20,
-                "description": "Clean and organized format for readability."
+                "name": "technical_skills",
+                "weight": 0.40,
+                "description": "Alignment with job requirements (backend, databases, APIs, cloud, AI/LLM).",
+                "scoring_guide": {
+                    "1": "Irrelevant skills",
+                    "2": "Few overlaps",
+                    "3": "Partial match",
+                    "4": "Strong match",
+                    "5": "Excellent match + AI/LLM exposure"
+                }
             },
             {
-                "criteria": "Relevant Work Experience",
-                "weight": 30,
-                "description": "Experience relevant to the role applied for."
+                "name": "experience_level",
+                "weight": 0.25,
+                "description": "Years of experience and project complexity.",
+                "scoring_guide": {
+                    "1": "<1 yr / trivial projects",
+                    "2": "1-2 yrs, small projects",
+                    "3": "2-3 yrs, mid-scale projects",
+                    "4": "3-4 yrs, solid track record",
+                    "5": "5+ yrs, high-impact projects"
+                }
             },
             {
-                "criteria": "Technical Skills",
-                "weight": 25,
-                "description": "Technical skills demonstrated relevant to the role."
+                "name": "achievements",
+                "weight": 0.20,
+                "description": "Impact of past work (scaling, performance, adoption).",
+                "scoring_guide": {
+                    "1": "No clear achievements",
+                    "2": "Minimal improvements",
+                    "3": "Some measurable outcomes",
+                    "4": "Significant contributions",
+                    "5": "Major measurable impact"
+                }
             },
             {
-                "criteria": "Education & Certifications",
-                "weight": 10,
-                "description": "Relevant educational background and certifications."
-            },
-            {
-                "criteria": "Portfolio & Projects",
-                "weight": 15,
-                "description": "Relevant projects demonstrating technical expertise."
+                "name": "cultural_fit",
+                "weight": 0.15,
+                "description": "Communication, learning mindset, teamwork/leadership.",
+                "scoring_guide": {
+                    "1": "Not demonstrated",
+                    "2": "Minimal",
+                    "3": "Average",
+                    "4": "Good",
+                    "5": "Excellent and well-demonstrated"
+                }
             }
         ],
-        "total_weight": 100
-    },
-    "version": "1.0",
-    "change_log": [
-        {
-            "date": "2025-10-04",
-            "change": "Initial creation of CV rubric document"
+        "overall_formula": "cv_match_rate = (technical_skills*0.40 + experience_level*0.25 + achievements*0.20 + cultural_fit*0.15) / 5",
+        "expected_output": {
+            "format": "JSON",
+            "fields": [
+                "technical_skills",
+                "experience_level",
+                "achievements",
+                "cultural_fit",
+                "cv_match_rate",
+                "cv_feedback"
+            ],
+            "cv_feedback_length": "80-200 chars"
         }
-    ]
+    }
 }
