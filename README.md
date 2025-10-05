@@ -66,6 +66,8 @@ The system extracts text embeddings, stores them as vectors, and performs semant
 | `POST` | `/upload`     | Upload CV and project documents |
 | `POST` | `/evaluate`   | Trigger evaluation process     |
 | `GET`  | `/result/:id` | Retrieve evaluation result     |
+| `POST` | `/login`      | Login path using username & password     |
+| `POST` | `/register`   | Register user to login to system     |
 
 ## Environment Variables
 | Variable            | Description                                                 | Example                                    |
@@ -77,7 +79,11 @@ The system extracts text embeddings, stores them as vectors, and performs semant
 | `OPENAI_API_BASE`   | Optional custom base URL for OpenAI-compatible API endpoint | `https://api.openai.com/v1`                |
 | `OPENAI_API_KEY`    | OpenAI API key used for LLM requests                        | `sk-xxxxxxxxxxxxxxxxxxxxx`                 |
 | `QDRANT_COLLECTION` | Qdrant collection name for storing vector embeddings        | `system_docs`                              |
+| `JWT_SECRET`        | JWT Secret for authentication                               | `JWT-xxxxxxx`                              |
 
 ## Notes
-The worker extracts embeddings and queries Qdrant for context,
-then calls the LLM to generate semantic scores for each uploaded CV and project.
+- The worker extracts embeddings and queries Qdrant for context, then calls the LLM to generate semantic scores for each uploaded CV and project.
+- The default login using
+  ```bash
+  username: admin
+  password: password
