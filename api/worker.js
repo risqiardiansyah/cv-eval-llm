@@ -205,7 +205,7 @@ const worker = new Worker(
       meta.status = "completed";
       meta.result = {
         cv_match_rate: finalCvJson?.cv_match_rate || 0,
-        cv_feedback: finalCvJson?.cd_feedback || "",
+        cv_feedback: finalCvJson?.cv_feedback || "",
         project_score: finalprojJson?.project_score || 0,
         project_feedback: finalprojJson?.project_feedback || "",
         overall_summary: finalsynthJson?.overall_summary || "",
