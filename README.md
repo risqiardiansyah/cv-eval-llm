@@ -1,4 +1,4 @@
-# AI CV & Project Evaluator — Integrate LLM & Qdrant
+# AI CV & Project Evaluator - Integrate LLM & Qdrant
 
 A modular backend system for evaluating CVs and project portfolios using **OpenAI LLM** and **Qdrant vector database**.  
 The system extracts text embeddings, stores them as vectors, and performs semantic search to evaluate candidates skills and experiences.
