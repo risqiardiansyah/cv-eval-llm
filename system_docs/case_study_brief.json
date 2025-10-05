@@ -1,0 +1,51 @@
+{
+    "metadata": {
+        "author": "System Generator",
+        "last_updated": "2025-10-04",
+        "source": "Internal System Docs",
+        "language": "en",
+        "document_type": "case_study"
+    },
+    "unique_id": "case_study_001",
+    "valid_roles": [
+        "Backend Developer",
+        "Frontend Developer",
+        "Fullstack Developer",
+        "DevOps Engineer",
+        "Software Engineer"
+    ],
+    "tags": [
+        "performance",
+        "API",
+        "software engineering",
+        "case study"
+    ],
+    "usage_context": "This document will be used by the LLM to analyze software engineering case studies, specifically for backend, frontend, and fullstack development roles.",
+    "content": {
+        "title": "Improving API Performance in a SaaS Platform",
+        "background": "A SaaS company providing project management tools is experiencing latency issues in its REST API. This impacts user experience and retention.",
+        "problem_statement": "How to optimize API performance to ensure scalability and reliability under heavy load.",
+        "objectives": [
+            "Reduce average API response time by at least 40%",
+            "Increase system stability under load",
+            "Improve scalability without major infrastructure overhaul"
+        ],
+        "constraints": [
+            "Limited budget for new infrastructure",
+            "Must be implemented within 2 months",
+            "Use existing technology stack"
+        ],
+        "expected_outcomes": [
+            "API response time below 200ms for 95% of requests",
+            "Zero critical errors in production for 30 days",
+            "Improved customer satisfaction score"
+        ]
+    },
+    "version": "1.0",
+    "change_log": [
+        {
+            "date": "2025-10-04",
+            "change": "Initial creation of case study document"
+        }
+    ]
+}

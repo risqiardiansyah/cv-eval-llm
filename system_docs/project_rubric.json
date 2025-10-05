@@ -1,0 +1,60 @@
+{
+    "metadata": {
+        "author": "System Generator",
+        "last_updated": "2025-10-04",
+        "source": "Internal System Docs",
+        "language": "en",
+        "document_type": "project_rubric"
+    },
+    "unique_id": "project_rubric_001",
+    "valid_roles": [
+        "Backend Developer",
+        "Frontend Developer",
+        "Fullstack Developer",
+        "DevOps Engineer",
+        "Software Engineer"
+    ],
+    "tags": [
+        "project evaluation",
+        "rubric",
+        "software engineering"
+    ],
+    "usage_context": "This document will be used by the LLM to evaluate software development projects for quality and impact.",
+    "content": {
+        "criteria": [
+            {
+                "criteria": "Clarity of Goals",
+                "weight": 20,
+                "description": "Goals must be clearly defined and measurable."
+            },
+            {
+                "criteria": "Innovation & Creativity",
+                "weight": 20,
+                "description": "Level of innovation in technical approach."
+            },
+            {
+                "criteria": "Technical Execution",
+                "weight": 30,
+                "description": "Quality of coding, architecture, and implementation."
+            },
+            {
+                "criteria": "Project Management",
+                "weight": 15,
+                "description": "Effective time and resource management."
+            },
+            {
+                "criteria": "Impact & Outcome",
+                "weight": 15,
+                "description": "The tangible impact and outcome of the project."
+            }
+        ],
+        "total_weight": 100
+    },
+    "version": "1.0",
+    "change_log": [
+        {
+            "date": "2025-10-04",
+            "change": "Initial creation of project rubric document"
+        }
+    ]
+}

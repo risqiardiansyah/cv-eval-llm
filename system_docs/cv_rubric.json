@@ -1,0 +1,60 @@
+{
+    "metadata": {
+        "author": "System Generator",
+        "last_updated": "2025-10-04",
+        "source": "Internal System Docs",
+        "language": "en",
+        "document_type": "cv_rubric"
+    },
+    "unique_id": "cv_rubric_001",
+    "valid_roles": [
+        "Backend Developer",
+        "Frontend Developer",
+        "Fullstack Developer",
+        "DevOps Engineer",
+        "Software Engineer"
+    ],
+    "tags": [
+        "CV evaluation",
+        "rubric",
+        "software engineering"
+    ],
+    "usage_context": "This document will be used by the LLM to evaluate candidate CVs for software development positions.",
+    "content": {
+        "criteria": [
+            {
+                "criteria": "Formatting & Structure",
+                "weight": 20,
+                "description": "Clean and organized format for readability."
+            },
+            {
+                "criteria": "Relevant Work Experience",
+                "weight": 30,
+                "description": "Experience relevant to the role applied for."
+            },
+            {
+                "criteria": "Technical Skills",
+                "weight": 25,
+                "description": "Technical skills demonstrated relevant to the role."
+            },
+            {
+                "criteria": "Education & Certifications",
+                "weight": 10,
+                "description": "Relevant educational background and certifications."
+            },
+            {
+                "criteria": "Portfolio & Projects",
+                "weight": 15,
+                "description": "Relevant projects demonstrating technical expertise."
+            }
+        ],
+        "total_weight": 100
+    },
+    "version": "1.0",
+    "change_log": [
+        {
+            "date": "2025-10-04",
+            "change": "Initial creation of CV rubric document"
+        }
+    ]
+}

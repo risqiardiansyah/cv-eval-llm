@@ -1,0 +1,54 @@
+{
+    "metadata": {
+        "author": "System Generator",
+        "last_updated": "2025-10-04",
+        "source": "Internal System Docs",
+        "language": "en",
+        "document_type": "job_description"
+    },
+    "unique_id": "job_description_001",
+    "valid_roles": [
+        "Backend Developer",
+        "Frontend Developer",
+        "Fullstack Developer",
+        "DevOps Engineer",
+        "Software Engineer"
+    ],
+    "tags": [
+        "job description",
+        "software engineering",
+        "developer roles"
+    ],
+    "usage_context": "This document will be used by the LLM to understand and generate job descriptions for software development positions.",
+    "content": {
+        "job_title": "Fullstack Developer",
+        "department": "Engineering",
+        "location": "Remote / Jakarta, Indonesia",
+        "summary": "Responsible for developing and maintaining web applications, integrating APIs, and ensuring optimal performance across the stack.",
+        "responsibilities": [
+            "Design and implement scalable backend APIs",
+            "Develop user-facing features in frontend frameworks",
+            "Integrate third-party APIs",
+            "Collaborate with product and QA teams to ensure quality"
+        ],
+        "qualifications": [
+            "3+ years of experience in fullstack development",
+            "Proficiency in JavaScript, Node.js, and at least one frontend framework",
+            "Experience with RESTful APIs and database design",
+            "Strong problem-solving and communication skills"
+        ],
+        "benefits": [
+            "Competitive salary",
+            "Remote work options",
+            "Continuous learning opportunities",
+            "Collaborative work environment"
+        ]
+    },
+    "version": "1.0",
+    "change_log": [
+        {
+            "date": "2025-10-04",
+            "change": "Initial creation of job description document"
+        }
+    ]
+}

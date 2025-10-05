@@ -1,0 +1,40 @@
+services:
+  api:
+    build: ./api
+    ports:
+      - "3000:3000"
+    env_file: ./api/.env
+    volumes:
+      - ./api/uploads:/app/uploads
+      - ./api/.env:/app/.env
+    depends_on:
+      - redis
+      - qdrant
+
+  worker:
+    build: ./api
+    command: node worker.js
+    env_file: ./api/.env
+    volumes:
+      - ./api/uploads:/app/uploads
+      - ./api/.env:/app/.env
+    depends_on:
+      - redis
+      - qdrant
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - "5432:5432"
