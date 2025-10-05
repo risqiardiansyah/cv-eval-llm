@@ -69,6 +69,8 @@ The system extracts text embeddings, stores them as vectors, and performs semant
 | `POST` | `/login`      | Login path using username & password     |
 | `POST` | `/register`   | Register user to login to system     |
 
+For detail documentation follow this link: https://documenter.getpostman.com/view/29785126/2sB3QGvBtb
+
 ## Environment Variables
 | Variable            | Description                                                 | Example                                    |
 | ------------------- | ----------------------------------------------------------- | ------------------------------------------ |
